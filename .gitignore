@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+
+# Jupyter
+.ipynb_checkpoints
+
+# Testing
+htmlcov/
+.tox/
+.coverage
+.pytest_cache/
+
+# UV lock -- keep in version control for reproducibility
+# uv.lock
+
+# Caches
+.cache/
+.ruff_cache/
+.mypy_cache/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data (generated at runtime)
+data/
+
+# Logs
+debug.log
+
+# Scratchpad
+.scratchpad/
