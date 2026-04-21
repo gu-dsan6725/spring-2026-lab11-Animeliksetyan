@@ -2,17 +2,37 @@
 The Travel assistant sent the following JSONRPC 2.0 request to the Flight Booking Agent.
 {
   "jsonrpc": "2.0",
+
+  
   "method": "message/send",
+
+  
   "params": {
+
+  
     "message": {
+
+    
       "role": "user",
+
+      
       "parts": [
+
+      
         {
           "kind": "text",
+
+          
           "text": "I need to book flight ID 1 (United UA101, SF to NY on 2025-11-15). Please reserve 2 seats, confirm the reservation, and process the payment."
         }
+
+        
       ],
+
+      
       "messageId": "7fa7678eea944605a50f9f9a78124c33"
+
+      
     }
   }
 }
@@ -40,6 +60,8 @@ params.message.parts                Array of {kind: "text", text: "...."} ojects
 params.message.messageId            Unique UUID per message
 
 The response wraps the agent's reply in a result object containing:
+
+
 **artifacts**: array of response parts (the actual agent output)
 
 
@@ -58,11 +80,23 @@ The response wraps the agent's reply in a result object containing:
 The agent card was fetched from http://127.0.0.1:10002/.well-known/agent-card.json and contained:
 
 **name**: "Flight Booking Agent", which was used to identify and label the agent in logs and cache
+
+
 **url**: "http://127.0.0.1:10002/", which was used as the endpoint for A2A message delivery
+
+
 **description**: "Flight booking and reservation management agent", which was used by the registry for semantic matching
+
+
 **skills**: 5 skills listed (check_availability, reserve_flight, confirm_booking, process_payment, manage_reservation). These skills were used by the Travel Assistant's LLM to understand what the remote agent can do and how to phrase the delegation message
+
+
 **protocolVersion**: "0.3.0". This ensures protocol compatibility before connecting
+
+
 **preferredTransport**: "JSONRPC", which tells the client which protocol to use
+
+
 
 The Travel Assistant fetched the agent card at invocation time (card_resolver.py) to initialize the A2A client before sending the first message.
 
