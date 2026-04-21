@@ -62,12 +62,26 @@ Discovery happened as follows:
 ### 3. The JSON-RPC Request/Response Format Observed
 THe A2A protocol uses JSON-RPC 2.0 as its envelope:
 
+
+
 Field                               Value
+
+
 jsonrpc                             "2.0" (protocol version)
+
+
 method                              "message/send" (A2A method)
+
+
 params.messge.role                   "user" (sender role)
+
+
 params.message.parts                Array of {kind: "text", text: "...."} ojects
+
+
 params.message.messageId            Unique UUID per message
+
+
 
 The response wraps the agent's reply in a result object containing:
 
