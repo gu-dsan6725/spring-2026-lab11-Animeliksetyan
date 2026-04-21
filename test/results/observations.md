@@ -1,6 +1,10 @@
 ### 1. A2A Message Exchanged between agents
 The Travel assistant sent the following JSONRPC 2.0 request to the Flight Booking Agent.
+
+
 {
+
+
   "jsonrpc": "2.0",
 
   
@@ -34,8 +38,14 @@ The Travel assistant sent the following JSONRPC 2.0 request to the Flight Bookin
 
       
     }
+
+    
   }
+
+  
 }
+
+
 
 The flight booking agent received this message, executed the internal tools, namely reserve_flight, check_availability, and returned a JSON-RPC response containing an artifacts array with the booking confirmation text ( booking number: BDK7F209, total_price: $250).
 
