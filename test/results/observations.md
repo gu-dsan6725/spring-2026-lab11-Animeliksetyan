@@ -66,7 +66,7 @@ THe A2A protocol uses JSON-RPC 2.0 as its envelope:
 
 
 
-**Field**                               **Value**
+**Field**                               *Value*
 
 
 **jsonrpc**:                            *"2.0" (protocol version)*
