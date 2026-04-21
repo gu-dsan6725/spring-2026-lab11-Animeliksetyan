@@ -1,11 +1,10 @@
 ### 1. A2A Message Exchanged between agents
+
+
 The Travel assistant sent the following JSONRPC 2.0 request to the Flight Booking Agent.
 
 
-{
-
-
-  "jsonrpc": "2.0",
+{ "jsonrpc": "2.0",
 
   
   "method": "message/send",
@@ -56,7 +55,10 @@ Discovery happened as follows:
 
 
 1. Query was sent to registry. The travel asssistant called is discover_remote_agents tool with the query "flight booking reservation confirmation payment processing" and sent it to the Registry Stub at http://127.0.0.1:7861 via semantic search
+
 2. Registry returned a match. The registry performed a semantic search and returned 1 matching agent, i.e. the Flight Booking agent, together with its URL http://127.0.0.1:10002 and ID (/flight-booking-agent).
+
+   
 3. Agent cached. The travel assistant created a RemoteAgentClient for the Flight booking agent and stored it in a local cache (RemoteAgentCache) ready for invocation. We can see it in the log as "Cached 1 new agents. Total in cache:1". 
 
 ### 3. The JSON-RPC Request/Response Format Observed
@@ -64,22 +66,22 @@ THe A2A protocol uses JSON-RPC 2.0 as its envelope:
 
 
 
-Field                               Value
+**Field**                               **Value**
 
 
-jsonrpc                             "2.0" (protocol version)
+**jsonrpc**:                            *"2.0" (protocol version)*
 
 
-method                              "message/send" (A2A method)
+**method**                              *"message/send" (A2A method)*
 
 
-params.messge.role                   "user" (sender role)
+**params.messge.role**                  *"user" (sender role)*
 
 
-params.message.parts                Array of {kind: "text", text: "...."} ojects
+**params.message.parts**                *Array of {kind: "text", text: "...."} ojects*
 
 
-params.message.messageId            Unique UUID per message
+**params.message.messageId**            *Unique UUID per message*
 
 
 
