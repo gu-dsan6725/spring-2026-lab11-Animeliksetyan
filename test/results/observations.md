@@ -41,9 +41,17 @@ params.message.messageId            Unique UUID per message
 
 The response wraps the agent's reply in a result object containing:
 **artifacts**: array of response parts (the actual agent output)
+
+
 **history**: full turn-by-turn conversation history
+
+
 **status.state**: "completed" when done
+
+
 **contextId and taskId**: for tracking conversation state
+
+
 
 ### 4. What was in the agent Card and How it was used
 
